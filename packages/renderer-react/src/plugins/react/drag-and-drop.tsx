@@ -72,6 +72,7 @@ export function DragAndDropPlugin() {
     },
 
     handleTopicDragStart(props) {
+      // console.log("handleTopicDragStart")
       const { controller, ev } = props;
       ev.stopPropagation();
       controller.run('operation', {
@@ -125,6 +126,7 @@ export function DragAndDropPlugin() {
     },
 
     handleTopicDrop(props) {
+      // console.log("handleTopicDrop")
       log('handleTopicDrop');
       const { controller, topicKey, model } = props;
       props = { ...props, srcKey: model.focusKey, dstKey: topicKey };

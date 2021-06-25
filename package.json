@@ -1,10 +1,10 @@
 {
-  "private": true,
-  "name": "blink-mind",
+  "private": false,
+  "name": "lemon-mind",
   "workspaces": [
     "packages/*"
   ],
-  "version": "0.0.0",
+  "version": "1.0.4",
   "author": "awehook <awehook@163.com>",
   "license": "MIT",
   "scripts": {
