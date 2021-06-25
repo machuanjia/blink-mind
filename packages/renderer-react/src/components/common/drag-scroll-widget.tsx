@@ -45,7 +45,7 @@ export class DragScrollWidget extends React.Component<
     };
   }
 
-  public targetMove = null
+  public targetMove = null;
 
   static defaultProps = {
     mouseKey: 'left',
@@ -157,10 +157,9 @@ export class DragScrollWidget extends React.Component<
       this._lastCoordY = this.viewBox.scrollTop + e.nativeEvent.clientY;
 
       const ele = useWindowListener ? window : this.viewBox;
-      this.targetMove = ele
+      this.targetMove = ele;
       ele.addEventListener('mousemove', this.onMouseMove);
       ele.addEventListener('mouseup', this.onMouseUp);
-      
     }
   };
 
@@ -179,10 +178,16 @@ export class DragScrollWidget extends React.Component<
   onMouseMove = (e: MouseEvent) => {
     // console.log("onMouseMove11")
     // @ts-ignore
-    if(e && e.target && e.target.className && e.target.className.indexOf('draged') > -1 && this.targetMove){
+    if (
+      e &&
+      e.target &&
+      e.target.className &&
+      e.target.className.indexOf('draged') > -1 &&
+      this.targetMove
+    ) {
       this.targetMove.removeEventListener('mousemove', this.onMouseMove);
       this.targetMove.removeEventListener('mouseup', this.onMouseUp);
-      return
+      return;
     }
     this.viewBox.scrollLeft = this._lastCoordX - e.clientX;
     this.viewBox.scrollTop = this._lastCoordY - e.clientY;
