@@ -181,7 +181,9 @@ export class DragScrollWidget extends React.Component<
     if (
       e &&
       e.target &&
+      // @ts-ignore
       e.target.className &&
+      // @ts-ignore
       e.target.className.indexOf('draged') > -1 &&
       this.targetMove
     ) {
