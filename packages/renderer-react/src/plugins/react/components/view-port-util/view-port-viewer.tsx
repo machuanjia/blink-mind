@@ -147,40 +147,55 @@ export class ViewPortViewer extends BaseWidget {
     const { controller, zIndex } = props;
     const zoomFactor = controller.run('getZoomFactor', props);
     let toolbarAside = {
-        collapseAll: {
-          icon: Icon(IconName.COLLAPSE_ALL),
-          title: 'collapse all',
-        },
-        expandAll: { icon: Icon(IconName.EXPAND_ALL), title: 'expand all' },
-        center: { icon: Icon(IconName.CENTER), title: 'center root topic' },
-        zoomIn: { icon: Icon(IconName.MINUS), title: 'zoom in' },
-        resetZoom: { icon: <></> , title: 'reset zoom' },
-        zoomOut: { icon: Icon(IconName.PLUS), title: 'zoom out' },
-    }
+      collapseAll: {
+        icon: Icon(IconName.COLLAPSE_ALL),
+        title: 'collapse all'
+      },
+      expandAll: { icon: Icon(IconName.EXPAND_ALL), title: 'expand all' },
+      center: { icon: Icon(IconName.CENTER), title: 'center root topic' },
+      zoomIn: { icon: Icon(IconName.MINUS), title: 'zoom in' },
+      resetZoom: { icon: <></>, title: 'reset zoom' },
+      zoomOut: { icon: Icon(IconName.PLUS), title: 'zoom out' }
+    };
     try {
-       toolbarAside = controller.run('renderToolBarAside', props)
-    } catch (error) {
-    }
+      toolbarAside = controller.run('renderToolBarAside', props);
+    } catch (error) {}
     return (
       <ViewerRoot zIndex={zIndex}>
-        <Item onClick={this.onClickCollapseAll} tooltip={toolbarAside.collapseAll.title}>
+        <Item
+          onClick={this.onClickCollapseAll}
+          tooltip={toolbarAside.collapseAll.title}
+        >
           {toolbarAside.collapseAll.icon}
         </Item>
-        <Item onClick={this.onClickExpandAll} tooltip={toolbarAside.expandAll.title}>
+        <Item
+          onClick={this.onClickExpandAll}
+          tooltip={toolbarAside.expandAll.title}
+        >
           {toolbarAside.expandAll.icon}
         </Item>
-        <Item onClick={this.centerRootTopic} tooltip={toolbarAside.center.title}>
+        <Item
+          onClick={this.centerRootTopic}
+          tooltip={toolbarAside.center.title}
+        >
           {toolbarAside.center.icon}
         </Item>
-        <Item onClick={this.onClickMinusZoom} tooltip={toolbarAside.zoomIn.title}>
+        <Item
+          onClick={this.onClickMinusZoom}
+          tooltip={toolbarAside.zoomIn.title}
+        >
           {toolbarAside.zoomIn.icon}
         </Item>
-        <Item onClick={this.onClickResetZoom} tooltip={toolbarAside.resetZoom.title}>
-           {`${Math.floor(
-            zoomFactor * 100
-          )}%`}
+        <Item
+          onClick={this.onClickResetZoom}
+          tooltip={toolbarAside.resetZoom.title}
+        >
+          {`${Math.floor(zoomFactor * 100)}%`}
         </Item>
-        <Item onClick={this.onClickAddZoom} tooltip={toolbarAside.zoomOut.title}>
+        <Item
+          onClick={this.onClickAddZoom}
+          tooltip={toolbarAside.zoomOut.title}
+        >
           {toolbarAside.zoomOut.icon}
         </Item>
       </ViewerRoot>

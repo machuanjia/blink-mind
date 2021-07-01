@@ -1,5 +1,5 @@
-import { Divider, MenuItem } from 'blueprintjs-core';
 import { Select } from '@blueprintjs/select';
+import { Divider, MenuItem } from 'blueprintjs-core';
 import * as React from 'react';
 import styled from 'styled-components';
 import { Flex } from '../../../../components/common';

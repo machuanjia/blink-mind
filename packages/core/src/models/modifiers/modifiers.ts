@@ -105,10 +105,10 @@ function addChild({ model, topicKey }: BaseModifierArg): ModifierResult {
     const child = Topic.create({ key: createKey(), parentKey: topic.key });
     // @ts-ignore
     topic = topic
-    // @ts-ignore
+      // @ts-ignore
       .set('collapse', false)
       .update('subKeys', subKeys => subKeys.push(child.key));
-      // @ts-ignore
+    // @ts-ignore
     model = model.update('topics', topics =>
       topics.set(topicKey, topic).set(child.key, child)
     );
@@ -129,7 +129,7 @@ function addSibling({ model, topicKey }: BaseModifierArg): ModifierResult {
     const idx = pItem.subKeys.indexOf(topicKey);
     const sibling = Topic.create({ key: createKey(), parentKey: pItem.key });
     model = model
-    // @ts-ignore
+      // @ts-ignore
       .update('topics', topics => topics.set(sibling.key, sibling))
       .updateIn(['topics', pItem.key, 'subKeys'], subKeys =>
         subKeys.insert(idx + 1, sibling.key)
@@ -267,10 +267,10 @@ function setEditorRootTopicKey({
   topicKey
 }: BaseModifierArg): ModifierResult {
   if (model.editorRootTopicKey !== topicKey)
-  // @ts-ignore
+    // @ts-ignore
     model = model.set('editorRootTopicKey', topicKey);
   if (model.getTopic(topicKey).collapse)
-  // @ts-ignore
+    // @ts-ignore
     model = model.setIn(['topics', topicKey, 'collapse'], false);
   return model;
 }
@@ -280,7 +280,7 @@ function setZoomFactor({
   zoomFactor
 }: SetZoomFactorArg): ModifierResult {
   if (model.zoomFactor !== zoomFactor)
-  // @ts-ignore
+    // @ts-ignore
     model = model.set('zoomFactor', zoomFactor);
   return model;
 }
