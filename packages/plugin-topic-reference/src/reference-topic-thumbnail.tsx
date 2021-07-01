@@ -1,6 +1,6 @@
 import { FocusMode, KeyType, OpType } from '@blink-mind/core';
 import { BaseProps, PropKey } from '@blink-mind/renderer-react';
-import { Alert, Button } from '@blueprintjs/core';
+import { Alert, Button } from 'blueprintjs-core';
 import * as React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';

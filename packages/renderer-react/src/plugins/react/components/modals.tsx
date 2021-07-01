@@ -1,4 +1,4 @@
-import { Classes, Dialog } from '@blueprintjs/core';
+import { Classes, Dialog } from 'blueprintjs-core';
 import * as React from 'react';
 import { BaseWidget } from '../../../components/common';
 import { BaseProps } from '../../../components/common/base-props';

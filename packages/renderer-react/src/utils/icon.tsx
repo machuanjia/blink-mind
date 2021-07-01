@@ -13,7 +13,7 @@ export const IconName = {
 };
 
 export function iconClassName(name) {
-  return `icon iconfont bm-${name}`;
+  return `icon iconfont icon-${name}`;
 }
 
 export function Icon(iconName) {

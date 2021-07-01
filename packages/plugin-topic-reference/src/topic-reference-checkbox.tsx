@@ -1,4 +1,4 @@
-import { Checkbox } from '@blueprintjs/core';
+import { Checkbox } from 'blueprintjs-core';
 import * as React from 'react';
 // useState 在vscode 运行报错 https://reactjs.org/docs/error-decoder.html/?invariant=321，
 // 问题原因，在yarn link package的时候，webpack 会打包进去多个 react-dom.js

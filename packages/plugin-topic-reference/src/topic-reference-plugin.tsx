@@ -6,7 +6,7 @@ import {
   OpType
 } from '@blink-mind/core';
 import { Icon, PropKey } from '@blink-mind/renderer-react';
-import { MenuDivider, MenuItem } from '@blueprintjs/core';
+import { MenuDivider, MenuItem } from 'blueprintjs-core';
 import * as React from 'react';
 import { AddReferenceTopicPanel } from './add-reference-topic-panel';
 import {

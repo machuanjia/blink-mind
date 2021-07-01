@@ -14,7 +14,7 @@
   },
   "scripts": {},
   "peerDependencies": {
-    "@blueprintjs/core": "*",
+    "blueprintjs-core": "*",
     "debug": "*",
     "react": "*",
     "styled-components": "*"

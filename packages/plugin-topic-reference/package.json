@@ -16,7 +16,7 @@
     "test": "jest"
   },
   "peerDependencies": {
-    "@blueprintjs/core": "*",
+    "blueprintjs-core": "*",
     "debug": "*",
     "immutable": "*",
     "react": "*",

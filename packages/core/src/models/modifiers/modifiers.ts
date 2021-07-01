@@ -26,9 +26,11 @@ const log = debug('modifier');
 function toggleCollapse({ model, topicKey }: BaseModifierArg): ModifierResult {
   let topic = model.getTopic(topicKey);
   if (topic && topic.subKeys.size !== 0) {
+    // @ts-ignore
     topic = topic.merge({
       collapse: !topic.collapse
     });
+    // @ts-ignore
     model = model.updateIn(
       ['topics', topic.key, 'collapse'],
       collapse => !collapse
@@ -41,6 +43,7 @@ function collapseAll({ model }: BaseModifierArg): ModifierResult {
   log('collapseAll');
   const topicKeys = getAllSubTopicKeys(model, model.editorRootTopicKey);
   log(model);
+  // @ts-ignore
   model = model.withMutations(m => {
     topicKeys.forEach(topicKey => {
       m.setIn(['topics', topicKey, 'collapse'], true);
@@ -53,6 +56,7 @@ function collapseAll({ model }: BaseModifierArg): ModifierResult {
 function expandAll({ model }: BaseModifierArg): ModifierResult {
   const topicKeys = getAllSubTopicKeys(model, model.editorRootTopicKey);
   log(model);
+  // @ts-ignore
   model = model.withMutations(m => {
     topicKeys.forEach(topicKey => {
       m.setIn(['topics', topicKey, 'collapse'], false);
@@ -64,6 +68,7 @@ function expandAll({ model }: BaseModifierArg): ModifierResult {
 
 function expandTo({ model, topicKey }: BaseModifierArg): ModifierResult {
   const keys = getAllAncestorKeys(model, topicKey);
+  // @ts-ignore
   model = model.withMutations(m => {
     keys.forEach(topicKey => {
       m.setIn(['topics', topicKey, 'collapse'], false);
@@ -74,6 +79,7 @@ function expandTo({ model, topicKey }: BaseModifierArg): ModifierResult {
     getRelationship(model, topicKey, model.editorRootTopicKey) !==
     TopicRelationship.DESCENDANT
   ) {
+    // @ts-ignore
     model = model.set('editorRootTopicKey', model.rootTopicKey);
   }
   return model;
@@ -85,7 +91,9 @@ function focusTopic({
   focusMode
 }: SetFocusModeArg): ModifierResult {
   log('focus topic');
+  // @ts-ignore
   if (topicKey !== model.focusKey) model = model.set('focusKey', topicKey);
+  // @ts-ignore
   if (focusMode !== model.focusMode) model = model.set('focusMode', focusMode);
   return model;
 }
@@ -95,9 +103,12 @@ function addChild({ model, topicKey }: BaseModifierArg): ModifierResult {
   let topic = model.getTopic(topicKey);
   if (topic) {
     const child = Topic.create({ key: createKey(), parentKey: topic.key });
+    // @ts-ignore
     topic = topic
+    // @ts-ignore
       .set('collapse', false)
       .update('subKeys', subKeys => subKeys.push(child.key));
+      // @ts-ignore
     model = model.update('topics', topics =>
       topics.set(topicKey, topic).set(child.key, child)
     );
@@ -118,6 +129,7 @@ function addSibling({ model, topicKey }: BaseModifierArg): ModifierResult {
     const idx = pItem.subKeys.indexOf(topicKey);
     const sibling = Topic.create({ key: createKey(), parentKey: pItem.key });
     model = model
+    // @ts-ignore
       .update('topics', topics => topics.set(sibling.key, sibling))
       .updateIn(['topics', pItem.key, 'subKeys'], subKeys =>
         subKeys.insert(idx + 1, sibling.key)
@@ -135,6 +147,7 @@ function deleteTopic({ model, topicKey }: BaseModifierArg): ModifierResult {
   if (topicKey === model.rootTopicKey) return model;
   const item = model.getTopic(topicKey);
   if (item) {
+    // @ts-ignore
     model = model.withMutations(m => {
       m.update('topics', topics => {
         topics = topics.delete(topicKey);
@@ -176,6 +189,7 @@ function setBlockData({
   if (topic) {
     const { index, block } = topic.getBlock(blockType);
     if (index === -1) {
+      // @ts-ignore
       model = model.updateIn(['topics', topicKey, 'blocks'], blocks =>
         blocks.push(
           Block.create({
@@ -236,12 +250,14 @@ function setStyle({
 }
 
 function setTheme({ model, theme }: SetThemeArg): ModifierResult {
+  // @ts-ignore
   model = model.setIn(['config', 'theme'], theme);
   return model;
 }
 
 function setLayoutDir({ model, layoutDir }: SetLayoutDirArg): ModifierResult {
   if (model.config.layoutDir === layoutDir) return model;
+  // @ts-ignore
   model = model.setIn(['config', 'layoutDir'], layoutDir);
   return model;
 }
@@ -251,8 +267,10 @@ function setEditorRootTopicKey({
   topicKey
 }: BaseModifierArg): ModifierResult {
   if (model.editorRootTopicKey !== topicKey)
+  // @ts-ignore
     model = model.set('editorRootTopicKey', topicKey);
   if (model.getTopic(topicKey).collapse)
+  // @ts-ignore
     model = model.setIn(['topics', topicKey, 'collapse'], false);
   return model;
 }
@@ -262,6 +280,7 @@ function setZoomFactor({
   zoomFactor
 }: SetZoomFactorArg): ModifierResult {
   if (model.zoomFactor !== zoomFactor)
+  // @ts-ignore
     model = model.set('zoomFactor', zoomFactor);
   return model;
 }

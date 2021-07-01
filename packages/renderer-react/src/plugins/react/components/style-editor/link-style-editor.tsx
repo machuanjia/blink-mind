@@ -1,5 +1,5 @@
 import { LinkStyle } from '@blink-mind/core';
-import { Button, MenuItem, Popover } from '@blueprintjs/core';
+import { Button, MenuItem, Popover } from 'blueprintjs-core';
 import * as React from 'react';
 import { SketchPicker } from 'react-color';
 import { Margin } from '../../../../components/common';

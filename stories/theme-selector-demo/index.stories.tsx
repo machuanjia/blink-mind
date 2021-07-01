@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { BaseDemo } from '../common/base-demo';
 import { Diagram, iconClassName, Icon } from '@blink-mind/renderer-react';
 import { ThemeSelectorPlugin } from '@blink-mind/plugin-theme-selector';
-import { Popover, Menu, MenuItem } from '@blueprintjs/core';
+import { Popover, Menu, MenuItem } from 'blueprintjs-core';
 import styled from 'styled-components';
 import { DiagramLayoutType } from '@blink-mind/core';
 

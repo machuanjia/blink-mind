@@ -32,6 +32,10 @@ const defaultModelRecord: ModelRecordType = {
 };
 
 export class Model extends Record(defaultModelRecord) {
+  // @ts-ignore
+  updateIn(arg0: (string | number)[], arg1: (dt: any) => any): Model {
+    throw new Error('Method not implemented.');
+  }
   static isModel(obj) {
     return obj instanceof Model;
   }

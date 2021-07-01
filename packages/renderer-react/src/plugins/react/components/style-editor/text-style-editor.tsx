@@ -1,4 +1,4 @@
-import { InputGroup, NumericInput, Popover } from '@blueprintjs/core';
+import { InputGroup, NumericInput, Popover } from 'blueprintjs-core';
 import * as React from 'react';
 import { SketchPicker } from 'react-color';
 import { Flex, Margin } from '../../../../components/common';

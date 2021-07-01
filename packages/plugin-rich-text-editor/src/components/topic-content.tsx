@@ -1,5 +1,5 @@
 import { BlockType, FocusMode, OpType } from '@blink-mind/core';
-import { Drawer } from '@blueprintjs/core';
+import { Drawer } from 'blueprintjs-core';
 import debug from 'debug';
 import * as React from 'react';
 import styled from 'styled-components';

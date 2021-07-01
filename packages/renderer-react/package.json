@@ -22,7 +22,7 @@
     "@blink-mind/core": "link:../core",
     "@blink-mind/icons": "link:../icons",
     "@blink-mind/plugin-simple-text-editor": "link:../plugin-simple-text-editor",
-    "@blueprintjs/core": "^3.19.1",
+    "blueprintjs-core": "^3.46.0",
     "@blueprintjs/select": "^3.11.1",
     "classnames": "^2.2.6",
     "immutable": "^4.0.0-rc.12",

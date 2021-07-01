@@ -8,7 +8,7 @@ import { ThemeSelectorPlugin } from '@blink-mind/plugin-theme-selector';
 import TopologyDiagramPlugin from '@blink-mind/plugin-topology-diagram';
 import TopicReferencePlugin from "@blink-mind/plugin-topic-reference";
 import styled from 'styled-components';
-import { Dialog, MenuItem, Menu, MenuDivider } from '@blueprintjs/core';
+import { Dialog, MenuItem, Menu, MenuDivider } from 'blueprintjs-core';
 import { downloadFile } from '../utils';
 import debug from 'debug';
 

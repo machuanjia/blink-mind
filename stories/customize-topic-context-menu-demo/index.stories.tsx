@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Diagram } from '@blink-mind/renderer-react';
 import { BaseDemo } from '../common/base-demo';
-import { MenuItem, MenuDivider } from '@blueprintjs/core';
+import { MenuItem, MenuDivider } from 'blueprintjs-core';
 import { storiesOf } from '@storybook/react';
 import * as marked from 'marked';
 //@ts-ignore

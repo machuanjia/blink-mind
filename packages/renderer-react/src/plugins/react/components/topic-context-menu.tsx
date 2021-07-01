@@ -1,4 +1,4 @@
-import { Menu } from '@blueprintjs/core';
+import { Menu } from 'blueprintjs-core';
 import * as React from 'react';
 import { BaseWidget } from '../../../components/common';
 

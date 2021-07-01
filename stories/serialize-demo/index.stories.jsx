@@ -6,7 +6,7 @@ import { JsonSerializerPlugin } from '@blink-mind/plugin-json-serializer';
 import RichTextEditorPlugin from '@blink-mind/plugin-rich-text-editor';
 
 import styled from 'styled-components';
-import { Dialog, MenuItem, Menu, MenuDivider } from '@blueprintjs/core';
+import { Dialog, MenuItem, Menu, MenuDivider } from 'blueprintjs-core';
 import { downloadFile } from '../utils';
 import debug from 'debug';
 

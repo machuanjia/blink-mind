@@ -1,5 +1,5 @@
 import { cancelEvent, Icon } from '@blink-mind/renderer-react';
-import { Drawer } from '@blueprintjs/core';
+import { Drawer } from 'blueprintjs-core';
 import * as React from 'react';
 import { TopologyDiagram } from './topology-diagram';
 

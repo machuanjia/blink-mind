@@ -1,6 +1,6 @@
 import { FocusMode, OpType } from '@blink-mind/core';
 import { Flex, ZIndex } from '@blink-mind/renderer-react';
-import { Button } from '@blueprintjs/core';
+import { Button } from 'blueprintjs-core';
 import * as React from 'react';
 import styled from 'styled-components';
 import { OP_TYPE_SET_REFERENCE_TOPICS } from './utils';

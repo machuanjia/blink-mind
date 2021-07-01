@@ -1,6 +1,6 @@
 import { BaseModifierArg, ModelModifier } from '@blink-mind/core';
 import { Icon } from '@blink-mind/renderer-react';
-import { MenuDivider, MenuItem } from '@blueprintjs/core';
+import { MenuDivider, MenuItem } from 'blueprintjs-core';
 import * as React from 'react';
 import { TopicBlockTopology } from './topic-block-topology';
 import { TopologyDrawer } from './topology-drawer';
