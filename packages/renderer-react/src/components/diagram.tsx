@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-07-02 09:35:14
  * @LastEditors: D.Y
  * @FilePath: /blink-mind/packages/renderer-react/src/components/diagram.tsx
- * @Description: 
+ * @Description:
  */
 import {
   Controller,
