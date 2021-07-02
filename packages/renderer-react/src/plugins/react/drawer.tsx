@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-07-02 09:53:55
  * @LastEditors: D.Y
  * @FilePath: /blink-mind/packages/renderer-react/src/plugins/react/drawer.tsx
- * @Description: 
+ * @Description:
  */
 import { BlockType, FocusMode, OpType } from '@blink-mind/core';
 import { Drawer } from 'blueprintjs-core';
