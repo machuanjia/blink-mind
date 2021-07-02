@@ -1,5 +1,5 @@
 import { OpType, TopicContentStyle } from '@blink-mind/core';
-import { Button, Popover } from '@blueprintjs/core';
+import { Button, Popover } from 'blueprintjs-core';
 import debug from 'debug';
 import * as React from 'react';
 import { SketchPicker } from 'react-color';

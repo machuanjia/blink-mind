@@ -1,5 +1,5 @@
 import { OpType } from '@blink-mind/core';
-import { Classes, Position, Tooltip } from '@blueprintjs/core';
+import { Classes, Position, Tooltip } from 'blueprintjs-core';
 import debug from 'debug';
 import * as React from 'react';
 import styled from 'styled-components';

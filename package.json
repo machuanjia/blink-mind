@@ -4,7 +4,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "version": "1.0.20",
+  "version": "1.0.21",
   "author": "awehook <awehook@163.com>",
   "license": "MIT",
   "scripts": {
@@ -23,7 +23,8 @@
     "unlink-package": "cd support && sh yarn-link.sh unlink"
   },
   "dependencies": {
-    "@blueprintjs/core": "^3.19.1"
+    "@blueprintjs/core": "^3.19.1",
+    "blueprintjs-core": "3.46.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

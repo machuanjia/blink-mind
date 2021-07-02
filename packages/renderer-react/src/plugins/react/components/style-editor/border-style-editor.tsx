@@ -1,4 +1,4 @@
-import { Popover } from '@blueprintjs/core';
+import { Popover } from 'blueprintjs-core';
 import * as React from 'react';
 import { SketchPicker } from 'react-color';
 import { iconClassName, IconName } from '../../../../utils';
@@ -12,7 +12,7 @@ import {
   WithBorder
 } from './components';
 
-import { Button } from '@blueprintjs/core';
+import { Button } from 'blueprintjs-core';
 
 const borderWidthItems = [...Array(7).keys()];
 const borderRadiusItems = [0, 5, 10, 15, 20, 25, 30, 35];

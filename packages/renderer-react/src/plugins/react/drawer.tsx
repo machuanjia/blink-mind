@@ -1,5 +1,13 @@
+/*
+ * @Author: D.Y
+ * @Date: 2021-07-02 09:35:08
+ * @LastEditTime: 2021-07-02 09:53:55
+ * @LastEditors: D.Y
+ * @FilePath: /blink-mind/packages/renderer-react/src/plugins/react/drawer.tsx
+ * @Description: 
+ */
 import { BlockType, FocusMode, OpType } from '@blink-mind/core';
-import { Drawer } from '@blueprintjs/core';
+import { Drawer } from 'blueprintjs-core';
 import * as React from 'react';
 import styled from 'styled-components';
 import { cancelEvent, Icon } from '../../utils';

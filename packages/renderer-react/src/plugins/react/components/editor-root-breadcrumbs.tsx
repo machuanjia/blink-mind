@@ -4,7 +4,7 @@ import {
   Breadcrumbs,
   PopoverPosition,
   Tooltip
-} from '@blueprintjs/core';
+} from 'blueprintjs-core';
 import * as React from 'react';
 import styled from 'styled-components';
 import { BaseWidget, ZIndex } from '../../../components/common';

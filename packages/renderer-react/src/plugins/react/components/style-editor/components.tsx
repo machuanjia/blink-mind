@@ -1,4 +1,4 @@
-import { Divider, MenuItem } from '@blueprintjs/core';
+import { Divider, MenuItem } from 'blueprintjs-core';
 import { Select } from '@blueprintjs/select';
 import * as React from 'react';
 import styled from 'styled-components';

@@ -1,5 +1,5 @@
 import { OpType } from '@blink-mind/core';
-import { MenuItem } from '@blueprintjs/core';
+import { MenuItem } from 'blueprintjs-core';
 import * as React from 'react';
 import { Icon } from '../../utils';
 import { TopicContextMenu } from './components/topic-context-menu';

@@ -1,5 +1,13 @@
+/*
+ * @Author: D.Y
+ * @Date: 2021-07-02 09:35:08
+ * @LastEditTime: 2021-07-02 09:54:25
+ * @LastEditors: D.Y
+ * @FilePath: /blink-mind/packages/renderer-react/src/plugins/react/components/style-editor/link-style-editor.tsx
+ * @Description: blueprintjs-core
+ */
 import { LinkStyle } from '@blink-mind/core';
-import { Button, MenuItem, Popover } from '@blueprintjs/core';
+import { Button, MenuItem, Popover } from 'blueprintjs-core';
 import * as React from 'react';
 import { SketchPicker } from 'react-color';
 import { Margin } from '../../../../components/common';

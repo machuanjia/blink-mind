@@ -1,4 +1,4 @@
-import { Button } from '@blueprintjs/core';
+import { Button } from 'blueprintjs-core';
 import * as React from 'react';
 import { SettingGroup, SettingItem } from './components';
 
