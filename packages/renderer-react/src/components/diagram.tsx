@@ -1,3 +1,11 @@
+/*
+ * @Author: D.Y
+ * @Date: 2021-07-02 09:35:08
+ * @LastEditTime: 2021-07-02 09:35:14
+ * @LastEditors: D.Y
+ * @FilePath: /blink-mind/packages/renderer-react/src/components/diagram.tsx
+ * @Description: 
+ */
 import {
   Controller,
   FocusMode,
@@ -5,7 +13,7 @@ import {
   OnChangeFunction
 } from '@blink-mind/core';
 // TODO
-import '@blink-mind/icons';
+// import '@blink-mind/icons';
 import { Hotkey, Hotkeys, HotkeysTarget } from '@blueprintjs/core';
 import '@blueprintjs/core/lib/css/blueprint.css';
 import debug from 'debug';

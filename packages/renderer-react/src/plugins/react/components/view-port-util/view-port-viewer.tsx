@@ -38,15 +38,19 @@ const ZoomFactorSpan = styled.span`
 
 const Item = props => {
   return (
-    <Tooltip
-      content={props.tooltip}
-      position={Position.TOP}
-      className={Classes.ICON}
-    >
+    <>
+    {/* <Tooltip
+    //   content={props.tooltip}
+    //   position={Position.TOP}
+    //   className={Classes.ICON}
+    // > */}
+    <div title={props.tooltip}>
       <Item_ onClick={props.onClick} tabIndex={-1}>
         {props.children}
       </Item_>
-    </Tooltip>
+    </div>  
+    {/* </Tooltip> */}
+    </>
   );
 };
 
@@ -150,27 +154,44 @@ export class ViewPortViewer extends BaseWidget {
     const props = this.props;
     const { controller, zIndex } = props;
     const zoomFactor = controller.run('getZoomFactor', props);
+    let defaultToolbarAside = {
+        collapseAll: {
+          icon: Icon(IconName.COLLAPSE_ALL),
+          title: 'collapse all',
+        },
+        expandAll: { icon: Icon(IconName.EXPAND_ALL), title: 'expand all' },
+        center: { icon: Icon(IconName.CENTER), title: 'center root topic' },
+        zoomIn: { icon: Icon(IconName.MINUS), title: 'zoom in' },
+        resetZoom: { icon: <></> , title: 'reset zoom' },
+        zoomOut: { icon: Icon(IconName.PLUS), title: 'zoom out' },
+    }
+    let toolbarAside = defaultToolbarAside
+  try {
+     toolbarAside = controller.run('renderToolBarAside', props)
+  } catch (error) {
+    toolbarAside = defaultToolbarAside
+  }
     return (
       <ViewerRoot zIndex={zIndex}>
-        <Item onClick={this.onClickCollapseAll} tooltip="collapse all">
-          {Icon(IconName.COLLAPSE_ALL)}
+        <Item onClick={this.onClickCollapseAll} tooltip={toolbarAside.collapseAll.title}>
+          {toolbarAside.collapseAll.icon}
         </Item>
-        <Item onClick={this.onClickExpandAll} tooltip="expand all">
-          {Icon(IconName.EXPAND_ALL)}
+        <Item onClick={this.onClickExpandAll} tooltip={toolbarAside.expandAll.title}>
+          {toolbarAside.expandAll.icon}
         </Item>
-        <Item onClick={this.centerRootTopic} tooltip="center root topic">
-          {Icon(IconName.CENTER)}
+        <Item onClick={this.centerRootTopic} tooltip={toolbarAside.center.title}>
+          {toolbarAside.center.icon}
         </Item>
-        <Item onClick={this.onClickMinusZoom} tooltip="zoom in">
-          {Icon(IconName.MINUS)}
+        <Item onClick={this.onClickMinusZoom} tooltip={toolbarAside.zoomIn.title}>
+          {toolbarAside.zoomIn.icon}
         </Item>
-        <Item onClick={this.onClickResetZoom} tooltip="reset zoom">
-          <ZoomFactorSpan>{`zoom:${Math.floor(
+        <Item onClick={this.onClickResetZoom} tooltip={toolbarAside.resetZoom.title}>
+           {`${Math.floor(
             zoomFactor * 100
-          )}%`}</ZoomFactorSpan>
+          )}%`}
         </Item>
-        <Item onClick={this.onClickAddZoom} tooltip="zoom out">
-          {Icon(IconName.PLUS)}
+        <Item onClick={this.onClickAddZoom} tooltip={toolbarAside.zoomOut.title}>
+          {toolbarAside.zoomOut.icon}
         </Item>
       </ViewerRoot>
     );
